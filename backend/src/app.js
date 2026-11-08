@@ -6,7 +6,7 @@ import { errorHandler, notFound } from "./middleware/errorHandler.js";
 import { contactRouter } from "./routes/contact.routes.js";
 
 export const app = express();
-
+const startedAt = new Date().toISOString();
 app.set("trust proxy", 1);
 app.disable("x-powered-by");
 
@@ -24,7 +24,12 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/health", (req, res) => {
-  res.json({ success: true, message: "OK" });
+  res.json({
+    success: true,
+    message: "OK",
+    mailer: env.MAIL_DRY_RUN ? "dry-run" : "smtp",
+    startedAt,
+  });
 });
 app.use("/api/contact", contactRouter);
 
