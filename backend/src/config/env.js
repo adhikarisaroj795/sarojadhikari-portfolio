@@ -11,6 +11,16 @@ const schema = z
     SMTP_USER: z.email(),
     SMTP_PASS: z.string().default(""),
     MAIL_TO: z.email(),
+    // Comma-separated sites allowed to call the API from the browser
+    CORS_ORIGINS: z
+      .string()
+      .default("http://localhost:5173")
+      .transform((v) =>
+        v
+          .split(",")
+          .map((o) => o.trim())
+          .filter(Boolean),
+      ),
     MAIL_DRY_RUN: z
       .enum(["true", "false"])
       .default("false")
