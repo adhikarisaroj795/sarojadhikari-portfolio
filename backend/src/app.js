@@ -15,6 +15,14 @@ app.use(helmet());
 app.use(cors({ origin: env.CORS_ORIGINS, methods: ["GET", "POST"] }));
 app.use(express.json({ limit: "10kb" }));
 
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Saroj Adhikari — portfolio API",
+    endpoints: ["GET /api/health", "POST /api/contact"],
+  });
+});
+
 app.get("/api/health", (req, res) => {
   res.json({ success: true, message: "OK" });
 });
