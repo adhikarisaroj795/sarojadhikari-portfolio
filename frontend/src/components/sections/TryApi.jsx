@@ -8,9 +8,15 @@ export default function TryApi() {
           Try my API
         </h2>
         <p className="mt-4 max-w-md leading-relaxed text-muted">
-          This site has a small Express backend at{" "}
-          <span className="text-text">api.sarojadhikari.info.np</span>. Edit the
-          path and press Enter to see how it responds, including a proper 404.
+          These are live requests to the small Express backend behind this site.
+          Edit the path and press Enter to see how it responds, including a
+          proper 404.
+        </p>
+        <p className="mt-4 text-sm text-muted">
+          Prefer a terminal?{" "}
+          <code className="font-mono text-text">
+            curl api.sarojadhikari.info.np
+          </code>
         </p>
       </div>
       <div className="min-w-0">

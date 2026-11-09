@@ -62,6 +62,8 @@ export default function Terminal({ open, onClose }) {
 
     if (action === "close") onClose();
     if (action === "download-cv") downloadCv();
+    if (action === "hire")
+      window.location.href = `mailto:${profile.email}?subject=Let's talk`;
     if (action?.startsWith("goto:")) {
       onClose();
       document

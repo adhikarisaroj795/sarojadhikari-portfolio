@@ -73,7 +73,7 @@ const COMMANDS = {
 
   ls: () => ({ lines: [line(NAV_IDS.join("   "))] }),
 
-  goto: (arg) => {
+  goto: ([arg]) => {
     if (!NAV_IDS.includes(arg)) {
       return {
         lines: [
@@ -90,9 +90,45 @@ const COMMANDS = {
   clear: () => ({ lines: [], action: "clear" }),
   exit: () => ({ lines: [], action: "close" }),
 
-  sudo: () => ({
-    lines: [line("Nice try. This incident will be reported.", "error")],
+  neofetch: () => ({
+    lines: [
+      line("saroj@portfolio", "accent"),
+      line("---------------"),
+      line("Role      Full-stack developer"),
+      line(`Location  ${profile.location}`),
+      line("Shell     React 19 + Vite + Tailwind CSS"),
+      line("Backend   Node.js + Express 5 on api.sarojadhikari.info.np"),
+      line("Uptime    3+ years shipping production software"),
+      line("Status    Open to relocation and remote roles", "accent"),
+    ],
   }),
+
+  coffee: () => ({
+    lines: [
+      line("     ( (", "muted"),
+      line("      ) )", "muted"),
+      line("   ........"),
+      line("   |      |]"),
+      line("   \\      /"),
+      line("    `----'"),
+      line("Brewing… this is how most of this site was built.", "muted"),
+    ],
+  }),
+
+  sudo: (args) => {
+    if (args.join(" ") === "hire saroj") {
+      return {
+        lines: [
+          line("[sudo] password for recruiter: ********", "muted"),
+          line("Access granted. Opening your email client…", "accent"),
+        ],
+        action: "hire",
+      };
+    }
+    return {
+      lines: [line("Nice try. This incident will be reported.", "error")],
+    };
+  },
 };
 
 export const COMMAND_NAMES = Object.keys(COMMANDS).filter((c) => c !== "sudo");
@@ -108,7 +144,7 @@ export function runCommand(input) {
       ],
     };
   }
-  return command(args[0]?.toLowerCase());
+  return command(args.map((a) => a.toLowerCase()));
 }
 
 export const WELCOME = [

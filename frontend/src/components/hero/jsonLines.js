@@ -35,3 +35,12 @@ export function jsonLines(obj) {
   lines.push([punct("}")]);
   return lines;
 }
+
+// Response headers as "name: value" lines; the easter-egg header is highlighted.
+export function headerLines(headers) {
+  return headers.map(([name, value]) => [
+    { t: name, c: name === "x-hire-me" ? "text-accent" : "text-sky-300" },
+    punct(": "),
+    { t: value, c: "text-text/85" },
+  ]);
+}

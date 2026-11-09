@@ -8,4 +8,4 @@
 
 
 
-   cd ~/portfolio/frontend && npm ci && RAYON_NUM_THREADS=2 UV_THREADPOOL_SIZE=2 npm run build && cp -r dist/. ~/sarojadhikari.info.np/
+cd ~/portfolio/frontend && npm ci && RAYON_NUM_THREADS=2 UV_THREADPOOL_SIZE=2 npm run build && cp -r dist/. ~/sarojadhikari.info.np/
