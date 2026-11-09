@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Terminal from "../terminal/Terminal";
-import Sidebar from "./Sidebar";
+import Footer from "./Footer";
+import Header from "./Header";
 
 // Typing ` inside a form field must type a backtick, not open the terminal.
 const isTypingTarget = (el) =>
@@ -32,12 +33,11 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Sidebar onOpenTerminal={openTerminal} />
-      <main className="overflow-x-clip pt-14 md:ml-56 md:pt-0">
-        <div className="mx-auto max-w-6xl px-5 md:px-12 xl:px-16 2xl:max-w-7xl">
-          {children}
-        </div>
+      <Header />
+      <main className="overflow-x-clip">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">{children}</div>
       </main>
+      <Footer onOpenTerminal={openTerminal} />
       <Terminal open={terminalOpen} onClose={closeTerminal} />
     </>
   );

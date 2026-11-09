@@ -1,4 +1,4 @@
-// A screenshot inside a simple browser window.
+// A screenshot with a thin frame.
 export default function BrowserFrame({
   src,
   alt,
@@ -9,14 +9,6 @@ export default function BrowserFrame({
     <div
       className={`overflow-hidden rounded-lg border border-border bg-bg ${className}`}
     >
-      <div
-        className="flex gap-1.5 border-b border-border px-3 py-2"
-        aria-hidden="true"
-      >
-        <span className="size-2 rounded-full bg-[#ff5f57]/70" />
-        <span className="size-2 rounded-full bg-[#febc2e]/70" />
-        <span className="size-2 rounded-full bg-[#28c840]/70" />
-      </div>
       <img
         src={src}
         alt={alt}

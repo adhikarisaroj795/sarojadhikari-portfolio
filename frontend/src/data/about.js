@@ -2,7 +2,7 @@ import teachingPhoto from "../assets/teaching.webp";
 
 export const SUMMARY = [
   "I’m a full-stack developer from Kathmandu with three years of experience building production web applications in React and Node.js. Most of my work is enterprise software — CRMs, loan-approval workflows and operational dashboards — where access control, data integrity and a clear audit trail matter.",
-  "I’ve been the sole developer on systems running inside a commercial bank, which meant handling everything from MongoDB schemas and REST APIs to Docker deployments and server hardening, and explaining it clearly to the people who use it.",
+  "I’ve been the sole developer on systems used daily by banking and operations teams, which meant handling everything from MongoDB schemas and REST APIs to Docker deployments and server hardening",
 ];
 
 // Write achievements in the past tense so they stay true after a job change.

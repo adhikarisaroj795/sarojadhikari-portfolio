@@ -80,11 +80,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form
-      noValidate
-      onSubmit={onSubmit}
-      className="space-y-5 rounded-xl border border-border bg-surface p-6 sm:p-8"
-    >
+    <form noValidate onSubmit={onSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" error={errors.name}>
           <input
